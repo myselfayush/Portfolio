@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AYUSH KUMAR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -48,23 +49,28 @@
         }
         .logo span {
             display: inline-block;
-            opacity: 0;
-            animation: fadeInOut 2s linear infinite;
+            animation: fadeIn 0.5s forwards, colorChange 5s infinite;
         }
         .logo span:nth-child(1) { animation-delay: 0s; }
-        .logo span:nth-child(2) { animation-delay: 0.2s; }
-        .logo span:nth-child(3) { animation-delay: 0.4s; }
-        .logo span:nth-child(4) { animation-delay: 0.6s; }
-        .logo span:nth-child(5) { animation-delay: 0.8s; }
-        .logo span:nth-child(6) { animation-delay: 1s; }
-        .logo span:nth-child(7) { animation-delay: 1.2s; }
-        .logo span:nth-child(8) { animation-delay: 1.4s; }
-        .logo span:nth-child(9) { animation-delay: 1.6s; }
-        .logo span:nth-child(10) { animation-delay: 1.8s; }
-        .logo span:nth-child(11) { animation-delay: 2s; }
-        @keyframes fadeInOut {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
+        .logo span:nth-child(2) { animation-delay: 0.1s; }
+        .logo span:nth-child(3) { animation-delay: 0.2s; }
+        .logo span:nth-child(4) { animation-delay: 0.3s; }
+        .logo span:nth-child(5) { animation-delay: 0.4s; }
+        .logo span:nth-child(6) { animation-delay: 0.5s; }
+        .logo span:nth-child(7) { animation-delay: 0.6s; }
+        .logo span:nth-child(8) { animation-delay: 0.7s; }
+        .logo span:nth-child(9) { animation-delay: 0.8s; }
+        .logo span:nth-child(10) { animation-delay: 0.9s; }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes colorChange {
+            0% { color: #ff00ff; }
+            20% { color: #ff0000; }
+            40% { color: #00ff00; }
+            60% { color: #0000ff; }
+            80% { color: #ff00ff; }
+            100% { color: #ff0000; }
         }
         .menu-button {
             font-size: 1.5em;
@@ -229,9 +235,9 @@
             <h2>Contact</h2>
             <p>You can reach me at <a href="mailto:myself_ayush@outlook.com">myself_ayush@outlook.com</a></p>
             <div class="social-media">
-                <a href="https://github.com/myselfayush" class="github">GitHub</a>
-                <a href="https://twitter.com/myselfayush_" class="twitter">Twitter</a>
-                <a href="https://www.linkedin.com/in/myselfayush/" class="linkedin">LinkedIn</a>
+                <a href="https://github.com/myselfayush" class="github"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/myselfayush_" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/myselfayush/" class="linkedin"><i class="fab fa-linkedin"></i></a>
             </div>
         </section>
 
