@@ -93,8 +93,9 @@
             text-decoration: none;
             transition: background 0.3s ease;
         }
-        .menu a:hover {
+        .menu a:hover, .menu a.active {
             background: rgba(255, 255, 255, 0.1);
+            color: #fff;
         }
         .content {
             padding: 20px;
@@ -279,6 +280,18 @@
         }
 
         createGalaxy();
+
+        // Smooth scrolling and highlight menu button
+        document.querySelectorAll('.menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>
