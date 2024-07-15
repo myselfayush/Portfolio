@@ -1,22 +1,145 @@
-<h1>basic html</h1>
-<h2>hello, everyone </h2>
-<hr>
-<p>this is a paragraph. now, looks cool.</p>
-<br>
-<p>so, what do think about tech list. is it right</p>
-<ul>
-    <li>cpu</li>
-    <li>ram</li>
-    <li>hard drive</li>
-    <li>monitor</li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUSH KUMAR</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+        header, section, footer {
+            margin: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #ff6b6b, #f06595);
+            transition: background 0.3s ease;
+        }
+        nav ul li a:hover {
+            background: linear-gradient(45deg, #f06595, #ff6b6b);
+        }
+        .highlight {
+            color: blue;
+            font-weight: bold;
+        }
+        .social-media {
+            margin: 20px 0;
+        }
+        .social-media a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 5px;
+            display: inline-block;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .social-media a.github {
+            background: linear-gradient(45deg, #333, #555);
+        }
+        .social-media a.twitter {
+            background: linear-gradient(45deg, #1da1f2, #0d95e8);
+        }
+        .social-media a.linkedin {
+            background: linear-gradient(45deg, #0077b5, #00a0dc);
+        }
+        .social-media a.wikipedia {
+            background: linear-gradient(45deg, #000, #333);
+        }
+        .social-media a:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: shine 2s infinite ease-in-out;
+        }
+        @keyframes shine {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AYUSH KUMAR</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<ol>
-    <li>apple</li>
-    <li>samsung</li>
-    <li>asus</li>
-    <li>acer</li>
-</ol>
-<a href ="https://www.google.com">google search</a>
-<img src="image-nature-pictures-nnature-8.png"/>
-<html style = "background : rgb(12, 198, 77)"></html>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm <span class="highlight">Ayush Kumar</span>, and I am a <span class="highlight">Computer Science</span> student.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>You can reach me at <a href="mailto:myself_ayush@outlook.com">myself_ayush@outlook.com</a></p>
+        <div class="social-media">
+            <a href="https://github.com/myselfayush" class="github">GitHub</a>
+            <a href="https://twitter.com/myselfayush_" class="twitter">Twitter</a>
+            <a href="https://www.linkedin.com/in/myselfayush/" class="linkedin">LinkedIn</a>
+            <a href="https://en.wikipedia.org/wiki/ayush.official" class="wikipedia">Wikipedia</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 <span class="highlight">Ayush Kumar</span>. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Create shining stars effect
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            document.body.appendChild(star);
+
+            setTimeout(() => {
+                star.remove();
+            }, 3000);
+        }
+
+        setInterval(createStar, 100);
+    </script>
+</body>
+</html>
