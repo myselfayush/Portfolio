@@ -49,6 +49,7 @@
         }
         .logo span {
             display: inline-block;
+            opacity: 0;
             animation: fadeIn 0.5s forwards, colorChange 5s infinite;
         }
         .logo span:nth-child(1) { animation-delay: 0s; }
@@ -142,14 +143,20 @@
         }
         .social-media {
             margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Vertically center the icons */
         }
         .social-media a {
             text-decoration: none;
             color: #fff;
-            padding: 15px;
-            border-radius: 50%;
+            width: 50px; /* Increased size */
+            height: 50px; /* Increased size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px; /* Square with rounded corners */
             margin: 0 10px;
-            display: inline-block;
             transition: transform 0.3s ease, background 0.3s ease;
             background: linear-gradient(45deg, #00c6ff, #8a2be2);
             backdrop-filter: blur(10px);
@@ -236,7 +243,7 @@
             <p>You can reach me at <a href="mailto:myself_ayush@outlook.com">myself_ayush@outlook.com</a></p>
             <div class="social-media">
                 <a href="https://github.com/myselfayush" class="github"><i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/myselfayush_" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://twitter.com/myselfayush_" class="twitter"><i class="fas fa-x"></i></a>
                 <a href="https://www.linkedin.com/in/myselfayush/" class="linkedin"><i class="fab fa-linkedin"></i></a>
             </div>
         </section>
