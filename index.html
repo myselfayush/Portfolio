@@ -50,7 +50,7 @@
             margin-bottom: 20px;
         }
         .highlight {
-            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            background: linear-gradient(45deg, #00ff00, #0000ff, #ff00ff); /* Green-Blue-Pink gradient */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: bold;
@@ -118,6 +118,29 @@
             z-index: 0;
             overflow: hidden;
         }
+        .spark {
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background: linear-gradient(to bottom, #ffcc00, #ff6600);
+            opacity: 0.8;
+            transform: rotate(45deg);
+            animation: spark 0.5s linear infinite;
+        }
+        @keyframes spark {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-20px) rotate(45deg);
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 0.8;
+            }
+        }
         a[href^="mailto:"] {
             color: #00c6ff;
         }
@@ -125,10 +148,34 @@
             margin-top: 20px;
             font-size: 0.9em;
         }
+        .electric-text {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ff00, #0000ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid rgba(255, 255, 255, 0.75);
+            animation: typing 5s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: rgba(255, 255, 255, 0.75); }
+        }
     </style>
 </head>
 <body>
     <div class="galaxy"></div>
+    <div class="electric-text">AYUSH KUMAR</div>
     <div class="content">
         <section id="about">
             <h2>About Me</h2>
@@ -142,12 +189,11 @@
                 <a href="https://github.com/myselfayush" class="github">GitHub</a>
                 <a href="https://twitter.com/myselfayush_" class="twitter">Twitter</a>
                 <a href="https://www.linkedin.com/in/myselfayush/" class="linkedin">LinkedIn</a>
-                <a href="https://en.wikipedia.org/wiki/ayush.official" class="wikipedia">Wikipedia</a>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2023 <span class="highlight">Ayush Kumar</span>. All rights reserved.</p>
+            <p>&copy; 2024 <span class="highlight">Ayush Kumar</span>. All rights reserved.</p>
         </footer>
     </div>
 
@@ -183,6 +229,22 @@
         }
 
         createGalaxy();
+
+        // Create electric spark effect
+        function createSpark() {
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            spark.style.top = `${Math.random() * 100}vh`;
+            spark.style.left = `${Math.random() * 100}vw`;
+            document.body.appendChild(spark);
+
+            setTimeout(() => {
+                spark.remove();
+            }, 500); // Short lifespan for sparks
+        }
+
+        // Increase the frequency of spark creation
+        setInterval(createSpark, 100); // Frequent spark creation
     </script>
 </body>
 </html>
