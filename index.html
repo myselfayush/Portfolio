@@ -49,21 +49,22 @@
         .logo span {
             display: inline-block;
             opacity: 0;
-            animation: fadeIn 0.5s forwards;
+            animation: fadeInOut 2s linear infinite;
         }
         .logo span:nth-child(1) { animation-delay: 0s; }
-        .logo span:nth-child(2) { animation-delay: 0.1s; }
-        .logo span:nth-child(3) { animation-delay: 0.2s; }
-        .logo span:nth-child(4) { animation-delay: 0.3s; }
-        .logo span:nth-child(5) { animation-delay: 0.4s; }
-        .logo span:nth-child(6) { animation-delay: 0.5s; }
-        .logo span:nth-child(7) { animation-delay: 0.6s; }
-        .logo span:nth-child(8) { animation-delay: 0.7s; }
-        .logo span:nth-child(9) { animation-delay: 0.8s; }
-        .logo span:nth-child(10) { animation-delay: 0.9s; }
-        .logo span:nth-child(11) { animation-delay: 1s; }
-        @keyframes fadeIn {
-            to { opacity: 1; }
+        .logo span:nth-child(2) { animation-delay: 0.2s; }
+        .logo span:nth-child(3) { animation-delay: 0.4s; }
+        .logo span:nth-child(4) { animation-delay: 0.6s; }
+        .logo span:nth-child(5) { animation-delay: 0.8s; }
+        .logo span:nth-child(6) { animation-delay: 1s; }
+        .logo span:nth-child(7) { animation-delay: 1.2s; }
+        .logo span:nth-child(8) { animation-delay: 1.4s; }
+        .logo span:nth-child(9) { animation-delay: 1.6s; }
+        .logo span:nth-child(10) { animation-delay: 1.8s; }
+        .logo span:nth-child(11) { animation-delay: 2s; }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
         }
         .menu-button {
             font-size: 1.5em;
