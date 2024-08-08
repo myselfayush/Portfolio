@@ -1,2 +1,2 @@
 LINK 
-https://myselfayush.github.io/Portfolio/
+https://myselfayush.github.io/web/
