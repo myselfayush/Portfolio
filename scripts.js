@@ -38,11 +38,14 @@ createGalaxy();
 // Smooth scrolling and highlight menu button
 document.querySelectorAll('.menu a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-        document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
-        this.classList.add('active');
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth'
+            });
+            document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+        }
     });
 });
