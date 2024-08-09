@@ -3,30 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects - AYUSH KUMAR</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <span>P</span><span>R</span><span>O</span><span>J</span><span>E</span><span>C</span><span>T</span><span>S</span>
+            <span>A</span><span>Y</span><span>U</span><span>S</span><span>H</span>
+            <span>K</span><span>U</span><span>M</span><span>A</span><span>R</span>
         </div>
         <button class="menu-button colorful-menu-button" onclick="toggleMenu()">&#9776;</button>
-        <div class="menu" id="menu">
-            <a href="index.html" onclick="toggleMenu()">Home</a>
-            <a href="projects.html" onclick="toggleMenu()">Projects</a>
-        </div>
+      <div class="menu" id="menu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="projects.html" onclick="toggleMenu()">Projects</a>
+    <a href="education.html" onclick="toggleMenu()">Education</a>
+</div>
     </header>
+    <div class="galaxy"></div>
     <div class="content">
-        <section id="main">
-            <h2>Welcome to the Projects</h2>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <h3>Project 1</h3>
+                    <p>Description of project 1.</p>
+                    <a href="https://github.com/myselfayush/project1" class="github"><i class="fab fa-github"></i> View on GitHub</a>
+                </div>
+                <div class="project-item">
+                    <h3>Project 2</h3>
+                    <p>Description of project 2.</p>
+                    <a href="https://github.com/myselfayush/project2" class="github"><i class="fab fa-github"></i> View on GitHub</a>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
         </section>
-    </div>
 
-    <footer>
-        <p>&copy; 2024 <span class="highlight">Ayush Kumar</span>. All rights reserved.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2024 <span class="highlight">Ayush Kumar</span>. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script src="scripts.js"></script>
 </body>
