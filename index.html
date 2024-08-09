@@ -5,219 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AYUSH KUMAR</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), #000;
-            color: #fff;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            scroll-behavior: smooth;
-            position: relative;
-            animation: pulsate 10s infinite;
-        }
-        @keyframes pulsate {
-            0% { background-color: #000; }
-            50% { background-color: #111; }
-            100% { background-color: #000; }
-        }
-        header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 2;
-        }
-        .logo {
-            font-size: 2em;
-            color: #fff;
-            text-align: center;
-            position: absolute;
-            top: 60px; /* Adjusted to move it a little down */
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        .logo span {
-            display: inline-block;
-            opacity: 0;
-            animation: fadeIn 0.5s forwards, colorChange 5s infinite;
-        }
-        .logo span:nth-child(1) { animation-delay: 0s; }
-        .logo span:nth-child(2) { animation-delay: 0.1s; }
-        .logo span:nth-child(3) { animation-delay: 0.2s; }
-        .logo span:nth-child(4) { animation-delay: 0.3s; }
-        .logo span:nth-child(5) { animation-delay: 0.4s; }
-        .logo span:nth-child(6) { animation-delay: 0.5s; }
-        .logo span:nth-child(7) { animation-delay: 0.6s; }
-        .logo span:nth-child(8) { animation-delay: 0.7s; }
-        .logo span:nth-child(9) { animation-delay: 0.8s; }
-        .logo span:nth-child(10) { animation-delay: 0.9s; }
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        @keyframes colorChange {
-            0% { color: #ff00ff; }
-            20% { color: #ff0000; }
-            40% { color: #00ff00; }
-            60% { color: #0000ff; }
-            80% { color: #ff00ff; }
-            100% { color: #ff0000; }
-        }
-        .menu-button {
-            font-size: 1.5em;
-            background: none;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .menu-button:hover {
-            transform: scale(1.1);
-        }
-        .menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            left: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 3;
-        }
-        .menu a {
-            display: block;
-            padding: 10px 20px;
-            color: #fff;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-        .menu a:hover, .menu a.active {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-        }
-        .content {
-            padding: 20px;
-            text-align: center;
-            max-width: 800px;
-            z-index: 1;
-            animation: float 6s ease-in-out infinite;
-            margin-top: 100px; /* Adjusted for header */
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #00c6ff, #00ff72, #ff00ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        .highlight {
-            background: linear-gradient(45deg, #00ff00, #0000ff, #ff00ff); /* Green-Blue-Pink gradient */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
-        }
-        .highlight-green {
-            color: #00ff00; /* Green color */
-            font-weight: bold;
-        }
-        .social-media {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center; /* Vertically center the icons */
-        }
-        .social-media a {
-            text-decoration: none;
-            color: #fff;
-            width: 50px; /* Increased size */
-            height: 50px; /* Increased size */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px; /* Square with rounded corners */
-            margin: 0 10px;
-            transition: transform 0.3s ease, background 0.3s ease;
-            background: linear-gradient(45deg, #00c6ff, #8a2be2);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: colorChange 5s infinite, moveRound 4s infinite;
-        }
-        .social-media a:hover {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-        @keyframes colorChange {
-            0% { background: linear-gradient(45deg, #00c6ff, #8a2be2); }
-            25% { background: linear-gradient(45deg, #0072ff, #8a2be2); }
-            50% { background: linear-gradient(45deg, #00c6ff, #8a2be2); }
-            75% { background: linear-gradient(45deg, #0072ff, #8a2be2); }
-            100% { background: linear-gradient(45deg, #00c6ff, #8a2be2); }
-        }
-        @keyframes moveRound {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(10px, -10px); }
-            50% { transform: translate(20px, 0); }
-            75% { transform: translate(10px, 10px); }
-        }
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            animation: shine 2s infinite ease-in-out, rotate 10s linear infinite;
-        }
-        @keyframes shine {
-            0%, 100% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .galaxy {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-            z-index: 0;
-            overflow: hidden;
-        }
-        a[href^="mailto:"] {
-            color: #00c6ff;
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -240,11 +28,22 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>You can reach me at <a href="mailto:myself_ayush@outlook.com">myself_ayush@outlook.com</a></p>
             <div class="social-media">
                 <a href="https://github.com/myselfayush" class="github"><i class="fab fa-github"></i></a>
                 <a href="https://twitter.com/myselfayush_" class="twitter"><i class="fas fa-x"></i></a>
                 <a href="https://www.linkedin.com/in/myselfayush/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="social-media">
+                <a href="mailto:myself_ayush@outlook.com" class="email"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/6202972273" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+        
+        <section id="join-us">
+            <h2>Join Us</h2>
+            <div class="social-media">
+                <a href="https://discord.gg/yHuGTGcPJC" class="discord"><i class="fab fa-discord"></i></a>
+                <a href="https://github.com/cssocommunity" class="github"><i class="fab fa-github"></i></a>
             </div>
         </section>
 
@@ -253,59 +52,6 @@
         </footer>
     </div>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
-
-        // Create shining stars effect
-        function createStar() {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.top = `${Math.random() * 100}vh`;
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.animationDuration = `${Math.random() * 2 + 0.5}s`; // Faster blinking
-            document.body.appendChild(star);
-
-            setTimeout(() => {
-                star.remove();
-            }, 2000); // Shorter lifespan
-        }
-
-        // Increase the frequency of star creation
-        setInterval(createStar, 50); // More frequent star creation
-
-        // Create galaxy background effect
-        function createGalaxy() {
-            const galaxy = document.querySelector('.galaxy');
-            for (let i = 0; i < 200; i++) { // Increase the number of initial stars
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.top = `${Math.random() * 100}vh`;
-                star.style.left = `${Math.random() * 100}vw`;
-                star.style.animationDuration = `${Math.random() * 2 + 0.5}s`; // Faster blinking
-                galaxy.appendChild(star);
-            }
-        }
-
-        createGalaxy();
-
-        // Smooth scrolling and highlight menu button
-        document.querySelectorAll('.menu a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
