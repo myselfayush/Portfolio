@@ -49,3 +49,17 @@ document.querySelectorAll('.menu a').forEach(anchor => {
         }
     });
 });
+
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Hide menu when clicking outside
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('menu');
+    const menuButton = document.querySelector('.menu-button');
+    if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+        menu.style.display = 'none';
+    }
+});
